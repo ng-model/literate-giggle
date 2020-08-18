@@ -2822,4 +2822,4 @@ const Build = {
     isTesting: BUILD.isTesting ? true : false,
 };
 
-export { BUILD as B, CSS as C, H, NAMESPACE as N, promiseResolve as a, bootstrapLazy as b, consoleDevInfo as c, doc as d, h, plt as p, registerInstance as r, win as w };
+export { BUILD as B, CSS as C, H, NAMESPACE as N, promiseResolve as a, bootstrapLazy as b, consoleDevInfo as c, doc as d, Host as e, h, plt as p, registerInstance as r, win as w };

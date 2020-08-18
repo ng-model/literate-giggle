@@ -20,6 +20,9 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyHome {
+        "first": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +31,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyHomeElement extends Components.MyHome, HTMLStencilElement {
+    }
+    var HTMLMyHomeElement: {
+        prototype: HTMLMyHomeElement;
+        new (): HTMLMyHomeElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "my-home": HTMLMyHomeElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +57,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyHome {
+        "first"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "my-home": MyHome;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +70,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-home": LocalJSX.MyHome & JSXBase.HTMLAttributes<HTMLMyHomeElement>;
         }
     }
 }
